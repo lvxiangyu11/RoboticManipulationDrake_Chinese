@@ -1,0 +1,75 @@
+directives:
+# 添加左臂 IIWA14 机器人
+- add_model:
+    name: iiwa14_left
+    file: package://drake_models/iiwa_description/urdf/iiwa14_primitive_collision.urdf
+    default_joint_positions:
+        iiwa_joint_1: [0.0]
+        iiwa_joint_2: [0.3]
+        iiwa_joint_3: [0.0]
+        iiwa_joint_4: [-1.5]
+        iiwa_joint_5: [0.0]
+        iiwa_joint_6: [1.8]
+        iiwa_joint_7: [0.0]
+# 焊接左臂到世界坐标系
+- add_weld:
+    parent: world
+    child: iiwa14_left::iiwa_link_0
+    X_PC:
+        translation: [0, 0.5, 0.75]
+        rotation: !Rpy { deg: [0, 0, 0] }
+# 添加右臂 IIWA14 机器人
+- add_model:
+    name: iiwa14_right
+    file: package://drake_models/iiwa_description/urdf/iiwa14_primitive_collision.urdf
+    default_joint_positions:
+        iiwa_joint_1: [0.0]
+        iiwa_joint_2: [0.3]
+        iiwa_joint_3: [0.0]
+        iiwa_joint_4: [-1.5]
+        iiwa_joint_5: [0.0]
+        iiwa_joint_6: [1.8]
+        iiwa_joint_7: [0.0]
+# 焊接右臂到世界坐标系
+- add_weld:
+    parent: world
+    child: iiwa14_right::iiwa_link_0
+    X_PC:
+        translation: [0, -0.5, 0.75]
+        rotation: !Rpy { deg: [0, 0, 0] }
+# 添加桌子（静态模型会自动焊接到世界坐标系原点）
+- add_model:
+    name: table
+    file: file:///mnt/c/Users/lvxiangyu11/code/drake/robotic_manipulation/0_introduction/assets/table.sdf
+# 添加字母 B
+- add_model:
+    name: letter_B
+    file: file:///mnt/c/Users/lvxiangyu11/code/drake/robotic_manipulation/0_introduction/assets/B_model/B.sdf
+    default_free_body_pose:
+        B_body_link:
+            translation: [0.7, 0.0, 1.0]
+            rotation: !Rpy { deg: [0, 0, 0] }
+# 添加字母 P
+- add_model:
+    name: letter_P
+    file: file:///mnt/c/Users/lvxiangyu11/code/drake/robotic_manipulation/0_introduction/assets/P_model/P.sdf
+    default_free_body_pose:
+        P_body_link:
+            translation: [0.9, 0.0, 1.0]
+            rotation: !Rpy { deg: [0, 0, 0] }
+# 添加字母 G
+- add_model:
+    name: letter_G
+    file: file:///mnt/c/Users/lvxiangyu11/code/drake/robotic_manipulation/0_introduction/assets/G_model/G.sdf
+    default_free_body_pose:
+        G_body_link:
+            translation: [1.1, 0.0, 1.0]
+            rotation: !Rpy { deg: [0, 0, 0] }
+# 添加一个 YCB 物体（香蕉）
+- add_model:
+    name: banana
+    file: package://drake_models/ycb/011_banana.sdf
+    default_free_body_pose:
+        base_link:
+            translation: [0.5, 0.0, 0.8]
+            rotation: !Rpy { deg: [0, 0, 45] }

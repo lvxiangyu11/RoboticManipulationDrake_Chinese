@@ -1,28 +1,13 @@
 {
     "tests": [
         {
-            "name": "test_inverted_pendulum_structure (manipulation.exercises.intro.test_intro_fundamentals.TestIntroFundamentalsPendulumImplementation.test_inverted_pendulum_structure)",
-            "score": 0.0,
+            "name": "Test bimanual IIWA14 HardwareStation creation and structure",
+            "score": 10,
             "max_score": 10,
-            "status": "failed",
-            "output": "Test Failed: pydrake.systems.framework.LeafSystem.__init__() must be called when overriding __init__\n"
-        },
-        {
-            "name": "test_pendulum_dynamics (manipulation.exercises.intro.test_intro_fundamentals.TestIntroFundamentalsPendulumImplementation.test_pendulum_dynamics)",
-            "score": 0.0,
-            "max_score": 10,
-            "status": "failed",
-            "output": "Test Failed: pydrake.systems.framework.LeafSystem.__init__() must be called when overriding __init__\n"
-        },
-        {
-            "name": "Test pendulum output computation",
-            "score": 0.0,
-            "max_score": 10,
-            "status": "failed",
-            "output": "Test Failed: pydrake.systems.framework.LeafSystem.__init__() must be called when overriding __init__\n"
+            "status": "passed"
         }
     ],
     "leaderboard": [],
-    "execution_time": "0.00",
-    "score": 0.0
+    "execution_time": "0.26",
+    "score": 10
 }
